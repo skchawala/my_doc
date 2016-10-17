@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://quiz.geeksforgeeks.org/puzzle-37-maximum-run-in-cricket/ -->
+<html lang="en-US" prefix="og: http://ogp.me/ns#" class=" js"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="Computer Science quizzes for geeks. GATE Computer science previous year solved papers, Quizzes on GATE CS, Data Structures, Algorithms, DBMS, OS, Theory of Computation, Computer Architecture, Compilers, C, C++, Java, Python, Puzzles, Aptitude and Reasoning.">
+
+
+<meta property="og:image" content="http://www.geeksforgeeks.org/wp-content/uploads/gfg_200X200.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="200">
+<meta property="og:image:height" content="200">
+
+<title>Puzzle 37 | (Maximum run in cricket) - GeeksQuiz</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://quiz.geeksforgeeks.org/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="http://d30wr2otswzun8.cloudfront.net/wp-content/themes/iconic-one/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<!-- This site is optimized with the Yoast SEO plugin v3.1.2 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://quiz.geeksforgeeks.org/puzzle-37-maximum-run-in-cricket/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Puzzle 37 | (Maximum run in cricket) - GeeksQuiz">
+<meta property="og:description" content="Question: In a one day international cricket match, considering no extras(no wides, no ‘no’ balls, etc.) and no overthrows. What is the maximum number of runs that a batsman can score in an ideal case ? Note:”Here we assume ideal and little practical scenario. We assume that batsman can not run for more than 3… Read More »">
+<meta property="og:url" content="http://quiz.geeksforgeeks.org/puzzle-37-maximum-run-in-cricket/">
+<meta property="og:site_name" content="GeeksQuiz">
+<meta property="article:section" content="Puzzle">
+<meta property="article:published_time" content="2016-01-07T06:59:30+00:00">
+<meta property="article:modified_time" content="2016-02-11T11:10:50+00:00">
+<meta property="og:updated_time" content="2016-02-11T11:10:50+00:00">
+<!-- / Yoast SEO plugin. -->
+
+		<script type="text/javascript" async="" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/ga.js"></script><script id="facebook-jssdk" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/sdk.js"></script><script type="text/javascript" async="" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/cse.js"></script><script async="" type="text/javascript" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/gpt.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/quiz.geeksforgeeks.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.2.10"}};
+			!function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56812,55356,56807),0,0),c.toDataURL().length>3e3):(d.fillText(String.fromCharCode(55357,56835),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="mtq_CoreStyleSheets-css" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/mtq_core_style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="mtq_ThemeStyleSheets-css" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/mtq_theme_style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-quicklatex-format-css" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/quicklatex-format.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/pagenavi-css.css" type="text/css" media="all">
+<link rel="stylesheet" id="themonic-fonts-css" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="themonic-style-css" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="custom-style-css" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/custom.css" type="text/css" media="all">
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='themonic-ie-css'  href='http://d30wr2otswzun8.cloudfront.net/wp-content/themes/iconic-one/css/ie.css?ver=20130305' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/jquery.js"></script>
+<script type="text/javascript" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/script.min.js"></script>
+<script type="text/javascript" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/wp-quicklatex-frontend.js"></script>
+<meta name="generator" content="WordPress 4.2.10">
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+
+<script type="text/javascript">
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+<script type="text/javascript">
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/27823234/SP', [300, 250], 'div-gpt-ad-1458112424022-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<script type="text/javascript" async="" src="http://s3.buysellads.com/ac/bsa.js"></script><script type="text/javascript" async="" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/embed.js"></script><script src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/jsapi" type="text/javascript"></script><link type="text/css" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/default+en.css" rel="stylesheet"><link type="text/css" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/greensky.css" rel="stylesheet"><script type="text/javascript" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/default+en.I.js"></script><style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input {
+border-color: #94CC7A;
+}
+input.gsc-search-button {
+border-color: #94CC7A;
+background-color: #B5C9AB;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #A9DA92;
+background-color: #FFFFFF;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-color: #A9DA92;
+background-color: #B5C9AB;
+}
+.gsc-tabsArea {
+border-color: #A9DA92;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #A9DA92;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #A9DA92;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result.gsc-promotion:hover {
+border-color: #A9DA92;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #38761D;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #B45F06;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #274E13;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #6AA84F;
+}
+.gsc-cursor-page {
+color: #38761D;
+}
+a.gsc-trailing-more-results:link {
+color: #38761D;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #454545;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #274E13;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #274E13;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #A9DA92;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #A9DA92;
+background-color: #FFFFFF;
+color: #38761D;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #A9DA92;
+background-color: #B5C9AB;
+color: #B45F06;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #94CC7A;
+background-color: #CBE8B4;
+}
+.gsc-completion-title {
+color: #38761D;
+}
+.gsc-completion-snippet {
+color: #454545;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0066CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #0066CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0066CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0066CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #454545;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #815FA7;
+}</style><script src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/pubads_impl_95.js" async=""></script><link rel="prefetch" href="http://tpc.googlesyndication.com/safeframe/1-0-4/html/container.html"><script async="" type="text/javascript" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/count.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yL/r/s816eWC-2sl.gif)}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}</style></head>
+<body class="single single-post postid-22592 single-format-standard custom-background custom-background-white custom-font-enabled">
+
+<!-- BuySellAds Ad Code -->
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+<!-- End BuySellAds Ad Code -->
+
+<div id="page" class="hfeed site">
+	<header id="masthead" class="site-header" role="banner">
+					<hgroup>
+			<a href="http://quiz.geeksforgeeks.org/" title="GeeksQuiz" rel="home">GeeksQuiz</a>
+				<br ...=""> <a class="site-description">Computer Science Quizzes for Geeks !</a>
+		</hgroup>
+<div style="float:right;">
+<hgroup style="float:right;">
+
+
+<strong><a style="padding:0px 25px 0px 0px; font-size:25px; font-family: Georgia,Times New Roman,Times,Helvetica,Arial,serif; font-weight: lighter; letter-spacing: -0.05em; text-decoration:none;" href="http://quiz.geeksforgeeks.org/suggest/">Suggest</a></strong>
+
+<strong><a style="padding:0px 25px 0px 0px; font-size:25px; font-family: Georgia,Times New Roman,Times,Helvetica,Arial,serif; font-weight: lighter; letter-spacing: -0.05em; text-decoration:none;" href="http://www.practice.geeksforgeeks.org/">Practice</a></strong>
+
+<a style="padding:0px 20px 0px 0px; font-size:25px; font-family: Georgia,Times New Roman,Times,Helvetica,Arial,serif; font-weight: lighter; letter-spacing: -0.05em; text-decoration:none;" href="http://quiz.geeksforgeeks.org/placements/">Placements</a>
+
+<a style="padding:0px 20px 0px 0px; font-size:25px; font-family: Georgia,Times New Roman,Times,Helvetica,Arial,serif; font-weight: lighter; letter-spacing: -0.05em; text-decoration:none;" href="http://gatecs.geeksquiz.com/">GATE Q&amp;A</a>
+
+<a style="padding:0px 20px 0px 0px; font-size:25px; font-family: Georgia,Times New Roman,Times,Helvetica,Arial,serif; font-weight: lighter; letter-spacing: -0.05em; text-decoration:none;" href="http://www.geeksforgeeks.org/">GeeksforGeeks</a>
+
+</hgroup>
+<br>
+<span style="display:inline-block; width:300px;float:right;">
+<script>
+  (function() {
+    var cx = '009682134359037907028:f2a6aygurua';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchbox></gcse:searchbox>
+
+<style type="text/css">
+
+  .gsc-control-cse {
+     padding: 0px 10px;
+  } 
+
+  .gsc-control-cse {
+    font-family: "Trebuchet MS", sans-serif;
+    /*border-color: #E1F3DA;*/
+    /*background-color: #E1F3DA;*/
+  }
+  input.gsc-input {
+    border-color: #94CC7A;
+  }
+  input.gsc-search-button {
+    border-color: #94CC7A;
+    background-color: #4CB96B;
+    margin-top:15px;
+  }
+  .gsc-tabHeader.gsc-tabhInactive {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gsc-tabHeader.gsc-tabhActive {
+    border-color: #A9DA92;
+    background-color: #A9DA92;
+  }
+  .gsc-tabsArea {
+    border-color: #A9DA92;
+  }
+
+  .gsc-webResult.gsc-result {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gsc-webResult.gsc-result:hover {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gs-webResult.gs-result a.gs-title:link,
+  .gs-webResult.gs-result a.gs-title:link b{
+    color: #009900;
+  }
+ .gs-title{
+	height: 25px !important;
+}
+  .gs-webResult.gs-result a.gs-title:visited,
+  .gs-webResult.gs-result a.gs-title:visited b {
+    color: #009900;
+  }
+  .gs-webResult.gs-result a.gs-title:hover,
+  .gs-webResult.gs-result a.gs-title:hover b {
+    color: #003300;
+  }
+  .gs-webResult.gs-result a.gs-title:active,
+  .gs-webResult.gs-result a.gs-title:active b {
+    color: #009900;
+  }
+  .gsc-cursor-page {
+    color: #009900;
+  }
+  a.gsc-trailing-more-results:link {
+    color: #009900;
+  }
+  .gs-webResult.gs-result .gs-snippet {
+    color: #454545;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl {
+    color: #33cc00;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl-short {
+    color: #33cc00;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl-short {
+    display: none;
+  }
+  .gs-webResult.gs-result .gs-visibleUrl-long {
+    display: block;
+  }
+  .gsc-cursor-box {
+    border-color: #A9DA92;
+  }
+  .gsc-results .gsc-cursor-page {
+    border-color: #A9DA92;
+    background-color: #FFFFFF;
+  }
+  .gsc-results .gsc-cursor-page.gsc-cursor-current-page {
+    border-color: #A9DA92;
+    background-color: #A9DA92;
+  }
+  .gs-promotion.gs-result {
+    border-color: #94CC7A;
+    background-color: #CBE8B4;
+  }
+  .gs-promotion.gs-result a.gs-title:link {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result a.gs-title:visited {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result a.gs-title:hover {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result a.gs-title:active {
+    color: #0066CC;
+  }
+  .gs-promotion.gs-result .gs-snippet {
+    color: #454545;
+  }
+  .gs-promotion.gs-result .gs-visibleUrl,
+  .gs-promotion.gs-result .gs-visibleUrl-short {
+    color: #815FA7;
+  }
+  .gsib_a {
+    padding: 2px;
+  }
+</style>    
+</span>
+</div>
+
+		
+		
+		<nav id="site-navigation" class="themonic-nav" role="navigation">
+			<a class="assistive-text" href="http://quiz.geeksforgeeks.org/puzzle-37-maximum-run-in-cricket/#content" title="Skip to content">Skip to content</a>
+			<div class="menu-menu-1-container"><ul id="menu-top" class="nav-menu"><li id="menu-item-25174" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25174"><a href="http://quiz.geeksforgeeks.org/quiz-corner/">Quizzes</a>
+<ul class="sub-menu">
+	<li id="menu-item-25222" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25222"><a href="http://quiz.geeksforgeeks.org/quizzes-on-programming-languages/">Programming Languages</a>
+	<ul class="sub-menu">
+		<li id="menu-item-25175" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25175"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#C%20Programming%20Mock%20Tests">C</a></li>
+		<li id="menu-item-25176" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25176"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#C++%20Programming%20Mock%20Tests">C++</a></li>
+		<li id="menu-item-25177" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25177"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Java%20Programming%20Mock%20Tests">Java</a></li>
+		<li id="menu-item-25194" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25194"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Python%20Programming%20Mock%20Tests">Python</a></li>
+	</ul>
+</li>
+	<li id="menu-item-25226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25226"><a href="http://quiz.geeksforgeeks.org/quizzes-on-computer-science/">Computer Science</a>
+	<ul class="sub-menu">
+		<li id="menu-item-25196" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25196"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Data%20Structures%20Mock%20Tests">Data Structures</a></li>
+		<li id="menu-item-25197" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25197"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Algorithms%20Mock%20Tests">Algorithms</a></li>
+		<li id="menu-item-25198" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25198"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Operating%20Systems%20Mock%20Tests">Operating Systems</a></li>
+		<li id="menu-item-25199" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25199"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#DBMS%20Mock%20Tests">DBMS</a></li>
+		<li id="menu-item-25200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25200"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Compiler%20Design%20Mock%20Tests">Compiler Design</a></li>
+		<li id="menu-item-25201" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25201"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Computer%20Networks%20Mock%20Tests">Computer Networks</a></li>
+		<li id="menu-item-25202" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25202"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Theory%20of%20Computation%20Mock%20Tests">Theory of Computation</a></li>
+		<li id="menu-item-25203" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25203"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Computer%20Organization%20and%20Architecture">Computer Organization and Architecture</a></li>
+		<li id="menu-item-25215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25215"><a href="http://quiz.geeksforgeeks.org/software-engineering/">Software Engineering</a></li>
+		<li id="menu-item-25216" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25216"><a href="http://quiz.geeksforgeeks.org/html-and-xml/">HTML and XML</a></li>
+		<li id="menu-item-25204" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25204"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Engineering%20Mathematics">Engineering Mathematics</a></li>
+	</ul>
+</li>
+	<li id="menu-item-25195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25195"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#GATE%20Mock%20Tests">GATE</a></li>
+	<li id="menu-item-25205" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25205"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#Aptitude%20Mock%20Tests">Aptitude</a></li>
+	<li id="menu-item-25207" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25207"><a href="http://quiz.geeksforgeeks.org/quiz-corner/#CS%20Interview%20Questions">CS Interview Questions</a></li>
+</ul>
+</li>
+<li id="menu-item-23444" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor menu-item-has-children menu-item-23444"><a href="http://quiz.geeksforgeeks.org/category/articles/">Articles</a>
+<ul class="sub-menu">
+	<li id="menu-item-25236" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25236"><a href="http://quiz.geeksforgeeks.org/articles-on-programming-languages/">Programming Languages</a>
+	<ul class="sub-menu">
+		<li id="menu-item-23447" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23447"><a href="http://quiz.geeksforgeeks.org/category/articles/c-articles/">C</a></li>
+		<li id="menu-item-23448" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23448"><a href="http://quiz.geeksforgeeks.org/category/articles/c-articles-2/">C++</a></li>
+		<li id="menu-item-23462" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23462"><a href="http://quiz.geeksforgeeks.org/category/articles/java-articles/">Java</a></li>
+		<li id="menu-item-25231" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25231"><a href="http://quiz.geeksforgeeks.org/category/articles/python-articles/">Python</a></li>
+	</ul>
+</li>
+	<li id="menu-item-25235" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25235"><a href="http://quiz.geeksforgeeks.org/articles-on-computer-science-subjects/">Computer Science</a>
+	<ul class="sub-menu">
+		<li id="menu-item-23445" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23445"><a href="http://quiz.geeksforgeeks.org/category/articles/algorithms-articles/">Algorithms</a></li>
+		<li id="menu-item-23449" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23449"><a href="http://quiz.geeksforgeeks.org/category/articles/compiler-design-articles/">Compiler Design</a></li>
+		<li id="menu-item-23450" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23450"><a href="http://quiz.geeksforgeeks.org/category/articles/computer-networks-articles/">Computer Networks</a></li>
+		<li id="menu-item-23451" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23451"><a href="http://quiz.geeksforgeeks.org/category/articles/computer-organization-and-architecture-articles/">Computer Organization and Architecture</a></li>
+		<li id="menu-item-23452" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-23452"><a href="http://quiz.geeksforgeeks.org/category/articles/data-structures/">Data Structures</a>
+		<ul class="sub-menu">
+			<li id="menu-item-23453" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23453"><a href="http://quiz.geeksforgeeks.org/category/articles/data-structures/hash/">Hash</a></li>
+			<li id="menu-item-23454" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23454"><a href="http://quiz.geeksforgeeks.org/category/articles/data-structures/linked-list/">Linked List</a></li>
+			<li id="menu-item-23455" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23455"><a href="http://quiz.geeksforgeeks.org/category/articles/data-structures/queue/">Queue</a></li>
+			<li id="menu-item-23456" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23456"><a href="http://quiz.geeksforgeeks.org/category/articles/data-structures/stack/">Stack</a></li>
+			<li id="menu-item-23457" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23457"><a href="http://quiz.geeksforgeeks.org/category/articles/data-structures/tree/">Tree</a></li>
+		</ul>
+</li>
+		<li id="menu-item-23458" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23458"><a href="http://quiz.geeksforgeeks.org/category/articles/dbms-articles/">DBMS</a></li>
+		<li id="menu-item-23459" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23459"><a href="http://quiz.geeksforgeeks.org/category/articles/difference/">Difference</a></li>
+		<li id="menu-item-23460" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23460"><a href="http://quiz.geeksforgeeks.org/category/articles/digital-electronic/">Digital Electronics</a></li>
+		<li id="menu-item-23463" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23463"><a href="http://quiz.geeksforgeeks.org/category/articles/mathematics/">Mathematics</a></li>
+		<li id="menu-item-23464" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23464"><a href="http://quiz.geeksforgeeks.org/category/articles/operating-systems-articles/">Operating Systems</a></li>
+		<li id="menu-item-23466" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23466"><a href="http://quiz.geeksforgeeks.org/category/articles/theory-of-computation/">Theory of Computation</a></li>
+	</ul>
+</li>
+	<li id="menu-item-25237" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25237"><a href="http://quiz.geeksforgeeks.org/category/articles/placements/">Placements</a></li>
+	<li id="menu-item-23465" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-23465"><a href="http://quiz.geeksforgeeks.org/category/articles/puzzle/">Puzzles</a></li>
+	<li id="menu-item-23461" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23461"><a href="http://quiz.geeksforgeeks.org/category/articles/interview-experiences/">Interview Experiences</a></li>
+</ul>
+</li>
+<li id="menu-item-25208" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-25208"><a href="http://quiz.geeksforgeeks.org/gate-corner-2/">GATE</a>
+<ul class="sub-menu">
+	<li id="menu-item-27489" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27489"><a href="http://quiz.geeksforgeeks.org/gate-corner-2/">GATE CS Corner</a></li>
+	<li id="menu-item-25210" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25210"><a href="http://quiz.geeksforgeeks.org/gate-cs-notes/">GATE Notes</a></li>
+	<li id="menu-item-25211" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25211"><a href="http://quiz.geeksforgeeks.org/gate-cs-in-past/">GATE CS in Past</a></li>
+	<li id="menu-item-25212" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25212"><a href="http://quiz.geeksforgeeks.org/lmns/">Last Minute Notes</a></li>
+	<li id="menu-item-25213" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25213"><a href="http://quiz.geeksforgeeks.org/original-gate-previous-year-question-papers-cse-and-it/">Official Papers</a></li>
+	<li id="menu-item-25214" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25214"><a href="http://www.gatecs.geeksquiz.com/">GATE CS Forum</a></li>
+	<li id="menu-item-25209" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25209"><a href="http://quiz.geeksforgeeks.org/gate-cs-2017-syllabus/">GATE 2017 Syllabus (Expected)</a></li>
+	<li id="menu-item-27488" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27488"><a href="http://quiz.geeksforgeeks.org/gate-2017-important-dates-and-links/">GATE CS 2017 Dates</a></li>
+</ul>
+</li>
+<li id="menu-item-25248" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25248"><a href="http://quiz.geeksforgeeks.org/placements/">Placements</a></li>
+<li id="menu-item-25178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25178"><a href="http://quiz.geeksforgeeks.org/interview-corner/">Interview Corner</a></li>
+<li id="menu-item-25182" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25182"><a href="http://quiz.geeksforgeeks.org/category/articles/puzzle/">Puzzles</a></li>
+<li id="menu-item-25179" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25179"><a href="http://quiz.geeksforgeeks.org/contribute/">Contribute</a></li>
+<li id="menu-item-25180" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-25180"><a href="http://quiz.geeksforgeeks.org/latest-questions/">What’s New</a></li>
+<li id="menu-item-25381" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25381"><a href="http://www.geeksforgeeks.org/jobs/">Jobs</a></li>
+<li id="menu-item-27215" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27215"><a href="http://quiz.geeksforgeeks.org/official-apps/">Apps</a></li>
+</ul><select class="selectnav" id="selectnav1"><option value="">Menu</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/">QUIZZES</option><option value="http://quiz.geeksforgeeks.org/quizzes-on-programming-languages/">- Programming Languages</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#C%20Programming%20Mock%20Tests">-- C</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#C++%20Programming%20Mock%20Tests">-- C++</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Java%20Programming%20Mock%20Tests">-- Java</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Python%20Programming%20Mock%20Tests">-- Python</option><option value="http://quiz.geeksforgeeks.org/quizzes-on-computer-science/">- Computer Science</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Data%20Structures%20Mock%20Tests">-- Data Structures</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Algorithms%20Mock%20Tests">-- Algorithms</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Operating%20Systems%20Mock%20Tests">-- Operating Systems</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#DBMS%20Mock%20Tests">-- DBMS</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Compiler%20Design%20Mock%20Tests">-- Compiler Design</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Computer%20Networks%20Mock%20Tests">-- Computer Networks</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Theory%20of%20Computation%20Mock%20Tests">-- Theory of Computation</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Computer%20Organization%20and%20Architecture">-- Computer Organization and Architecture</option><option value="http://quiz.geeksforgeeks.org/software-engineering/">-- Software Engineering</option><option value="http://quiz.geeksforgeeks.org/html-and-xml/">-- HTML and XML</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Engineering%20Mathematics">-- Engineering Mathematics</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#GATE%20Mock%20Tests">- GATE</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#Aptitude%20Mock%20Tests">- Aptitude</option><option value="http://quiz.geeksforgeeks.org/quiz-corner/#CS%20Interview%20Questions">- CS Interview Questions</option><option value="http://quiz.geeksforgeeks.org/category/articles/">ARTICLES</option><option value="http://quiz.geeksforgeeks.org/articles-on-programming-languages/">- Programming Languages</option><option value="http://quiz.geeksforgeeks.org/category/articles/c-articles/">-- C</option><option value="http://quiz.geeksforgeeks.org/category/articles/c-articles-2/">-- C++</option><option value="http://quiz.geeksforgeeks.org/category/articles/java-articles/">-- Java</option><option value="http://quiz.geeksforgeeks.org/category/articles/python-articles/">-- Python</option><option value="http://quiz.geeksforgeeks.org/articles-on-computer-science-subjects/">- Computer Science</option><option value="http://quiz.geeksforgeeks.org/category/articles/algorithms-articles/">-- Algorithms</option><option value="http://quiz.geeksforgeeks.org/category/articles/compiler-design-articles/">-- Compiler Design</option><option value="http://quiz.geeksforgeeks.org/category/articles/computer-networks-articles/">-- Computer Networks</option><option value="http://quiz.geeksforgeeks.org/category/articles/computer-organization-and-architecture-articles/">-- Computer Organization and Architecture</option><option value="http://quiz.geeksforgeeks.org/category/articles/data-structures/">-- Data Structures</option><option value="http://quiz.geeksforgeeks.org/category/articles/data-structures/hash/">--- Hash</option><option value="http://quiz.geeksforgeeks.org/category/articles/data-structures/linked-list/">--- Linked List</option><option value="http://quiz.geeksforgeeks.org/category/articles/data-structures/queue/">--- Queue</option><option value="http://quiz.geeksforgeeks.org/category/articles/data-structures/stack/">--- Stack</option><option value="http://quiz.geeksforgeeks.org/category/articles/data-structures/tree/">--- Tree</option><option value="http://quiz.geeksforgeeks.org/category/articles/dbms-articles/">-- DBMS</option><option value="http://quiz.geeksforgeeks.org/category/articles/difference/">-- Difference</option><option value="http://quiz.geeksforgeeks.org/category/articles/digital-electronic/">-- Digital Electronics</option><option value="http://quiz.geeksforgeeks.org/category/articles/mathematics/">-- Mathematics</option><option value="http://quiz.geeksforgeeks.org/category/articles/operating-systems-articles/">-- Operating Systems</option><option value="http://quiz.geeksforgeeks.org/category/articles/theory-of-computation/">-- Theory of Computation</option><option value="http://quiz.geeksforgeeks.org/category/articles/placements/">- Placements</option><option value="http://quiz.geeksforgeeks.org/category/articles/puzzle/">- Puzzles</option><option value="http://quiz.geeksforgeeks.org/category/articles/interview-experiences/">- Interview Experiences</option><option value="http://quiz.geeksforgeeks.org/gate-corner-2/">GATE</option><option value="http://quiz.geeksforgeeks.org/gate-corner-2/">- GATE CS Corner</option><option value="http://quiz.geeksforgeeks.org/gate-cs-notes/">- GATE Notes</option><option value="http://quiz.geeksforgeeks.org/gate-cs-in-past/">- GATE CS in Past</option><option value="http://quiz.geeksforgeeks.org/lmns/">- Last Minute Notes</option><option value="http://quiz.geeksforgeeks.org/original-gate-previous-year-question-papers-cse-and-it/">- Official Papers</option><option value="http://www.gatecs.geeksquiz.com/">- GATE CS Forum</option><option value="http://quiz.geeksforgeeks.org/gate-cs-2017-syllabus/">- GATE 2017 Syllabus (Expected)</option><option value="http://quiz.geeksforgeeks.org/gate-2017-important-dates-and-links/">- GATE CS 2017 Dates</option><option value="http://quiz.geeksforgeeks.org/placements/">PLACEMENTS</option><option value="http://quiz.geeksforgeeks.org/interview-corner/">INTERVIEW CORNER</option><option value="http://quiz.geeksforgeeks.org/category/articles/puzzle/">PUZZLES</option><option value="http://quiz.geeksforgeeks.org/contribute/">CONTRIBUTE</option><option value="http://quiz.geeksforgeeks.org/latest-questions/">WHAT’S NEW</option><option value="http://www.geeksforgeeks.org/jobs/">JOBS</option><option value="http://quiz.geeksforgeeks.org/official-apps/">APPS</option></select></div>		</nav><!-- #site-navigation -->
+		<div class="clear"></div>
+
+	</header><!-- #masthead -->
+
+	<div id="main" class="wrapper">	<link rel="stylesheet" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/newstarrating.css" media="all">
+<!--	<link rel='stylesheet' id='custom-style-css'  href='http://d1gjlxt8vb0knt.cloudfront.net//wp-content/themes/iconic-one/custom.css' type='text/css' media='all' />
+-->	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+							
+<link rel="stylesheet" href="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/newlistrating.css" media="all">
+
+
+	<article id="post-22592" class="post-22592 post type-post status-publish format-standard hentry category-puzzle">
+				<header class="entry-header">
+						<h1 class="entry-title">Puzzle 37 | (Maximum run in cricket)</h1>
+				
+			</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p><b>Question:  </b>In a <b><i>one day international cricket match</i></b>, considering no extras(no wides, no ‘no’ balls, etc.) and no overthrows.</p>
+<p>What is the maximum number of runs that a batsman can score in an ideal case ?</p>
+<p>Note:”Here we  assume ideal and little practical scenario. We  assume that batsman can not run for more than 3 runs in a ball, as otherwise there is no limit, he can run infinite runs(theoretically) in a ball, as far as opposite team does not catch the ball.”</p>
+<p><br><br>
+<br><br><br>
+<br><br></p>
+<p><b>Answer:</b></p>
+<p><b>49</b>*(6*5+3)+(6*6)= <b>1653</b></p>
+<p><b>From Over 1 to 49:</b></p>
+<p>1st ball:- 6 runs(hit six)</p>
+<p>2nd ball:- 6 runs(hit six)</p>
+<p>3rd ball:- 6 runs(hit six)</p>
+<p>4th ball:- 6 runs(hit six)</p>
+<p>5th ball:- 6 runs(hit six)</p>
+<p>6th ball:- 3 runs(took 3 runs between the wickets and take back the strike)</p>
+<p>= &gt;49*(6*5+3)</p>
+<p><b>50th Over:</b></p>
+<p>Hit six sixes in a row.</p>
+<p>= &gt;6*6</p>
+<p>This article is contributed by <a href="https://www.quora.com/profile/Vikash-Kumar-164">Vikash Kumar</a>. Please write comments if you find anything incorrect, or you want to share more information about the topic discussed above</p>
+
+			
+<script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- GQBottom -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-9465609616171866" data-ad-slot="9545548432"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+		</div><!-- .entry-content -->
+				
+
+<br>
+
+See <a href="http://quiz.geeksforgeeks.org/placements/">Placement Course</a> for placement preparation, <a href="http://quiz.geeksforgeeks.org/gate-corner-2/">GATE Corner</a> for GATE CS Preparation and <a href="http://quiz.geeksforgeeks.org/quiz-corner/">Quiz Corner</a> for all Quizzes on GeeksQuiz.
+		
+
+		<footer class="entry-meta">
+		<span>Category: <a href="http://quiz.geeksforgeeks.org/category/articles/puzzle/" rel="category tag">Puzzle</a></span> <span></span> 
+           	          	
+					</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+                 
+<!-- Added on 29 Oct 2015 for next and previous from same category -->
+<nav class="nav-single">
+					<div class="assistive-text">Post navigation</div>
+					<span class="nav-previous"><a href="http://quiz.geeksforgeeks.org/puzzle-36-matchstick-puzzle/" rel="prev">Previous post in category</a></span>
+					<span class="nav-next"><a href="http://quiz.geeksforgeeks.org/puzzle-38-tic-tac-toe-puzzle/" rel="next">Next post in category</a></span>
+				</nav><!-- .nav-single -->
+
+
+<div class="plugins">
+  <div class="left">
+    <div pid="22592" ptitle="Puzzle 37 | (Maximum run in cricket)" id="ratePlugin"><div class="login">Logged in as
+					<a href="http://auth.geeksforgeeks.org/profile.php">
+						<b>Satish Kumar 1</b>
+					</a>
+					( <a href="http://auth.geeksforgeeks.org/logout.php?to=http://quiz.geeksforgeeks.org/puzzle-37-maximum-run-in-cricket/">Logout</a> )<br><br></div><div class="techno">
+					<span id="rating_box" class="avg-rating level-2">2.6</span>
+					<span class="rating-desc"> Average Difficulty : <b id="diff-rating">2.6/5.0</b><br><span id="vote_count">Based on <b>3</b> vote(s)</span></span>
+			<br>
+			<br>
+					<input rating="1" type="button" class="box basic" value="Basic">
+					<input rating="2" type="button" class="box easy" value="Easy">
+					<input rating="3" type="button" class="box medium" value="Medium">
+					<input rating="4" type="button" class="box hard" value="Hard">
+					<input rating="5" type="button" class="box expert" value="Expert"><br>
+				</div></div>
+  </div>
+  <div class="right">
+    <div pid="22592" ptitle="Puzzle 37 | (Maximum run in cricket)" id="starPlugin"><div class="techno">
+                                        
+                                        <span class="rating-desc"> Average Rating : <b id="diff-rating">0/5.0</b><br><span id="vote_count">No votes yet.</span></span><fieldset class="rate">
+    <input type="radio" id="rating10" name="rating" value="5" class="star"><label id="label10" class="full" for="rating10" title="5 stars"></label>
+    <input type="radio" id="rating9" name="rating" value="0" class="halfstar"><label id="label9" class="half" for="rating9"></label>
+    <input type="radio" id="rating8" name="rating" value="4" class="star"><label id="label8" class="full" for="rating8" title="4 stars"></label>
+    <input type="radio" id="rating7" name="rating" value="0" class="halfstar"><label id="label7" class="half" for="rating7"></label>
+    <input type="radio" id="rating6" name="rating" value="3" class="star"><label id="label6" class="full" for="rating6" title="3 stars"></label>
+    <input type="radio" id="rating5" name="rating" value="0" class="halfstar"><label id="label5" class="half" for="rating5"></label>
+    <input type="radio" id="rating4" name="rating" value="2" class="star"><label id="label4" class="full" for="rating4" title="2 stars"></label>
+    <input type="radio" id="rating3" name="rating" value="0" class="halfstar"><label id="label3" class="half" checked="" for="rating3"></label>
+    <input type="radio" id="rating2" name="rating" value="1" class="star"><label id="label2" class="full" for="rating2" title="1 star"></label>
+    <input type="radio" id="rating1" name="rating" value="0" class="halfstar"><label id="label1" class="half" for="rating1"></label>
+    
+		</fieldset></div></div>
+    <div pid="22592" ptitle="Puzzle 37 | (Maximum run in cricket)" id="markPlugin"><div class="lists">
+					<input id="todo" type="checkbox" class="mark">
+					<label class="checkbox" for="todo"> Add to TODO List </label>
+					<br>
+					<input id="done" type="checkbox" class="mark">
+					<label class="checkbox" for="done"> Mark as DONE </label>
+			</div></div>
+  </div>
+
+
+
+</div>
+
+
+
+
+<script src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/jquery.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+                  $.ajax({
+
+                         url:"http://auth.geeksforgeeks.org/newplugin.php",
+
+                         method:"POST",
+
+                         dataType:"json",
+
+                         data:{post_id:$("#ratePlugin").attr("pid"),url:window.location.href},
+
+                         xhrFields:{withCredentials:true},
+
+                         success:function(response){
+
+                         $("#ratePlugin").html(response.rate);
+
+                         $("#markPlugin").html(response.mark);
+
+                         $("#starPlugin").html(response.star);
+
+                        
+
+                         },
+
+                         complete:function(){
+
+                         $(".box").click(function(){
+
+                                         rrequest({post_id:$("#ratePlugin").attr("pid"),post_title:$("#ratePlugin").attr("ptitle"),rating:$(this).attr("rating"),url:window.location.href});
+
+                                         });
+
+                         $(".mark").click(function(){
+
+                                          mrequest({post_id:$("#markPlugin").attr("pid"),post_title:$("#markPlugin").attr("ptitle"),op:$(this).attr("id"),url:window.location.href});
+
+                                          });
+
+                         $(".star").click(function(){
+
+                                         
+
+                                          srequest({post_id:$("#starPlugin").attr("pid"),post_title:$("#starPlugin").attr("ptitle"),rating:$(this).attr("value"),url:window.location.href});
+
+                                          });
+
+                         $('.halfstar').prop('disabled',false);
+
+                         $('.halfstar').click(function(event){
+
+                                             
+
+                                              var x = event.target.id;
+
+                                   
+
+                                              var a = parseInt(x.charAt(x.length-1));
+
+                                
+
+                                             
+
+                                              if(a%2==1)
+
+                                              {
+
+                                              a=a+1;
+
+                                              var new1 = "#rating"+a;
+
+                                   
+
+                                              $(new1).prop('checked', true)
+
+                                              var l = document.getElementById("rating"+a);
+
+                                              l.click();
+
+                                              }
+
+                                             
+
+                                              });
+
+                         $( ".half" ).hover(function()
+
+                                            {
+
+                                            //$("#rating8label").css("color","#73B100");
+
+                                            var x = event.target.id;
+
+                                            var a = parseInt(x.charAt(x.length-1));
+
+                                    
+
+                                            if(a%2==1)
+
+                                            a=a+1;
+
+                                            var temp = true;
+
+                                            for(i=a-1;i<=10;i++)
+
+                                            {
+
+                                            if(document.getElementById("rating"+i).checked==true)
+
+                                            temp = false;
+
+                                            }
+
+                                           
+
+                                            for (i=a;i>0;i--)(function(i){
+
+                                                             
+
+                                                             
+
+                                                             
+
+                                                              if(document.getElementById("rating"+i).checked==false && temp== true)
+
+                                                              {$("#label"+i).css("color","#73B100");
+
+                                                             
+
+                                                              }
+
+                                                             
+
+                                                              else
+
+                                                              {$("#label"+i).css("color","#A6E72D");
+
+                                                              temp=false;
+
+                                                              }
+
+                                                              })(i);
+
+                                           
+
+                                            },
+
+                                            function(){
+
+                                            //$("#rating8label").css("color","#73B100");
+
+                                            var x = event.target.id;
+
+                                            var a = parseInt(x.charAt(x.length-1));
+
+                                            var b=0;
+
+                                            for(i=1;i<=10;i++)
+
+                                            {
+
+                                            if(document.getElementById("rating"+i).checked==true)
+
+                                            {
+
+                                            b=i;
+
+                                            }
+
+                                            }
+
+                                           
+
+                               
+
+                                           
+
+                                       
+
+                                            for (i=1;i<=10;i++)(function(i){
+
+                                                                if(i<=b)
+
+                                                                $("#label"+i).css("color","#73B100");
+
+
+
+                                                                else
+
+                                                                {
+
+                                                                $("#label"+i).css("color","#000000");
+
+                                                                }
+
+                                                                })(i);
+
+                                           
+
+                                            });
+
+                         $( ".full" ).hover(function()
+
+                                            {
+
+                                            //$("#rating8label").css("color","#73B100");
+
+                                            var x = event.target.id;
+
+                                            var a = parseInt(x.charAt(x.length-1));
+
+                            
+
+                                            if(a==0)
+
+                                            a=10;
+
+                                            var temp = true;
+
+                                            for(i=a-1;i<=10;i++)
+
+                                            {
+
+                                            if(document.getElementById("rating"+i).checked==true)
+
+                                            temp = false;
+
+                                            }
+
+                                           
+
+                                            for (i=a;i>0;i--)(function(i){
+
+                                                             
+
+                                                             
+
+                                                             
+
+                                                              if(document.getElementById("rating"+i).checked==false && temp== true)
+
+                                                              {$("#label"+i).css("color","#73B100");
+
+                                                             
+
+                                                              }
+
+                                                             
+
+                                                              else
+
+                                                              {$("#label"+i).css("color","#A6E72D");
+
+                                                              temp=false;
+
+                                                              }
+
+                                                              })(i);
+
+                                           
+
+                                            },
+
+                                            function(){
+
+                                            var x = event.target.id;
+
+                                            var a = parseInt(x.charAt(x.length-1));
+
+                                            var b=0;
+
+                                            for(i=1;i<=10;i++)
+
+                                            {
+
+                                            if(document.getElementById("rating"+i).checked==true)
+
+                                            {
+
+                                            b=i;
+
+                                            }
+
+                                            }
+
+                                           
+
+                                           
+
+                                           
+
+             
+
+                                            for (i=1;i<=10;i++)(function(i){
+
+                                                                if(i<=b)
+
+                                                                $("#label"+i).css("color","#73B100");
+
+                                                               
+
+                                                                else
+
+                                                                {
+
+                                                                $("#label"+i).css("color","#000000");
+
+                                                                }
+
+                                                                })(i);
+
+                                           
+
+                                            });
+
+                         }
+
+                        
+
+                         });
+
+                  function rrequest(payload){
+
+                  $.ajax({
+
+                         url:"http://auth.geeksforgeeks.org/gfgRatings.php",
+
+                         method:"POST",
+
+                         dataType:"html",
+
+                         data:payload,
+
+                         xhrFields:{withCredentials:true},
+
+                         success:function(response){
+
+                         $("#ratePlugin").html(response);
+
+                         },
+
+                         complete:function(){
+
+                         $(".box").click(function(){
+
+                                         rrequest({post_id:$("#ratePlugin").attr("pid"),post_title:$("#ratePlugin").attr("ptitle"),rating:$(this).attr("rating"),url:window.location.href});
+
+                                         });
+
+                         }
+
+                         });
+
+                  }
+
+                  //rrequest({post_id:$("#ratePlugin").attr("pid"),url:window.location.href});
+
+                  function mrequest(payload){
+
+                  $.ajax({
+
+                         url:"http://auth.geeksforgeeks.org/gfgMarking.php",
+
+                         method:"POST",
+
+                         dataType:"html",
+
+                         data:payload,
+
+                         xhrFields:{withCredentials:true},
+
+                         success:function(response){
+
+                         $("#markPlugin").html(response);
+
+                         },
+
+                         complete:function(){
+
+                         $(".mark").click(function(){
+
+                                          mrequest({post_id:$("#markPlugin").attr("pid"),post_title:$("#markPlugin").attr("ptitle"),op:$(this).attr("id"),url:window.location.href});
+
+                                          });
+
+                         }
+
+                         });
+
+                  }
+
+                  function srequest(payload){
+
+                  $.ajax({
+
+                         url:"http://auth.geeksforgeeks.org/newgfgStarRating.php",
+
+                         method:"POST",
+
+                         dataType:"html",
+
+                         data:payload,
+
+                         xhrFields:{withCredentials:true},
+
+                         success:function(response){
+
+                         // if(response==NULL)
+
+                         //    alert("please login to rate"h);
+
+                         $("#starPlugin").html(response);
+
+                         },
+
+                         complete:function(){
+
+                         $(".star").click(function(){
+
+                                          srequest({post_id:$("#starPlugin").attr("pid"),post_title:$("#starPlugin").attr("ptitle"),rating:$(this).attr("value"),url:window.location.href});
+
+                                          });
+
+                         $('.halfstar').prop('disabled',false);
+
+                         $('.halfstar').click(function(event){
+
+                                             
+
+                                              var x = event.target.id;
+
+                                             
+
+                                              var a = parseInt(x.charAt(x.length-1));
+
+                                             
+
+                                              if(a%2==1)
+
+                                              {
+
+                                              a=a+1;
+
+                                              var new1 = "#rating"+a;
+
+                                             
+
+                                              $(new1).prop('checked', true)
+
+                                              var l = document.getElementById("rating"+a);
+
+                                              l.click();
+
+                                              }
+
+                                             
+
+                                              });
+
+                        
+
+                         $( ".half" ).hover(function()
+
+                                            {
+
+                                            //$("#rating8label").css("color","#73B100");
+
+                                            var x = event.target.id;
+
+                                            var a = parseInt(x.charAt(x.length-1));
+
+                             
+
+                                            if(a%2==1)
+
+                                            a=a+1;
+
+                                            var temp = true;
+
+                                            for(i=a-1;i<=10;i++)
+
+                                            {
+
+                                            if(document.getElementById("rating"+i).checked==true)
+
+                                            temp = false;
+
+                                            }
+
+                                           
+
+                                            for (i=a;i>0;i--)(function(i){
+
+                                                             
+
+                                                             
+
+                                                             
+
+                                                              if(document.getElementById("rating"+i).checked==false && temp== true)
+
+                                                              {$("#label"+i).css("color","#73B100");
+
+                                                             
+
+                                                              }
+
+                                                             
+
+                                                              else
+
+                                                              {$("#label"+i).css("color","#A6E72D");
+
+                                                              temp=false;
+
+                                                              }
+
+                                                              })(i);
+
+                                           
+
+                                            },
+
+                                            function(){
+
+                                            var x = event.target.id;
+
+                                            var a = parseInt(x.charAt(x.length-1));
+
+                                            var b=0;
+
+                                            for(i=1;i<=10;i++)
+
+                                            {
+
+                                            if(document.getElementById("rating"+i).checked==true)
+
+                                            {
+
+                                            b=i;
+
+                                            }
+
+                                            }
+
+                                           
+
+                                           
+
+                                           
+
+                                  
+
+                                            for (i=1;i<=10;i++)(function(i){
+
+                                                                if(i<=b)
+
+                                                                $("#label"+i).css("color","#73B100");
+
+                                                               
+
+                                                                else
+
+                                                                {
+
+                                                                $("#label"+i).css("color","#000000");
+
+                                                                }
+
+                                                                })(i);
+
+                                           
+
+                        
+
+                                            });
+
+                         $( ".full" ).hover(function()
+
+                                            {
+
+                                            var x = event.target.id;
+
+                                            var a = parseInt(x.charAt(x.length-1));
+
+                                          
+
+                                            if(a==0)
+
+                                            a=10;
+
+                                            var temp = true;
+
+                                            for(i=a-1;i<=10;i++)
+
+                                            {
+
+                                            if(document.getElementById("rating"+i).checked==true)
+
+                                            temp = false;
+
+                                            }
+
+                                           
+
+                                            for (i=a;i>0;i--)(function(i){
+
+                                                             
+
+                                                            
+
+                                                             
+
+                                                              if(document.getElementById("rating"+i).checked==false && temp== true)
+
+                                                              {$("#label"+i).css("color","#73B100");
+
+                                                             
+
+                                                              }
+
+                                                             
+
+                                                              else
+
+                                                              {$("#label"+i).css("color","#A6E72D");
+
+                                                              temp=false;
+
+                                                              }
+
+                                                              })(i);
+
+                                            },
+
+                                            function(){
+
+                                            var x = event.target.id;
+
+                                            var a = parseInt(x.charAt(x.length-1));
+
+                                            var b=0;
+
+                                            for(i=1;i<=10;i++)
+
+                                            {
+
+                                            if(document.getElementById("rating"+i).checked==true)
+
+                                            {
+
+                                            b=i;
+
+                                            }
+
+                                            }
+
+                                           
+
+                                           
+
+                                           
+
+                                 
+
+                                            for (i=1;i<=10;i++)(function(i){
+
+                                                                if(i<=b)
+
+                                                                $("#label"+i).css("color","#73B100");
+
+                                                               
+
+                                                                else
+
+                                                                {
+
+                                                                $("#label"+i).css("color","#000000");
+
+                                                                }
+
+                                                                })(i);
+
+                                            });
+
+                        
+
+                         }
+
+                         });}});
+
+</script>
+
+<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/P5DLcu0KGJB.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/P5DLcu0KGJB(1).html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like fb_iframe_widget" data-share="true" data-width="450" data-show-faces="true" data-href="http://geeksquiz.com/puzzle-37-maximum-run-in-cricket/" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;container_width=656&amp;href=http%3A%2F%2Fgeeksquiz.com%2Fpuzzle-37-maximum-run-in-cricket%2F&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true&amp;width=450"><span style="vertical-align: bottom; width: 450px; height: 24px;"><iframe name="f167e9e0ceb4fcc" width="450px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/like.html" style="border: none; visibility: visible; width: 450px; height: 24px;" class=""></iframe></span></div>
+
+				
+<div id="disqus_thread"><iframe id="dsq-app4" name="dsq-app4" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 0px !important; display: none !important;"></iframe><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/saved_resource(1).html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 1843px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+<script type="text/javascript">
+var disqus_url = 'http://quiz.geeksforgeeks.org/puzzle-37-maximum-run-in-cricket/';
+var disqus_identifier = '22592 http://quiz.geeksforgeeks.org/?p=22592';
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = 'geeksquiz';
+var disqus_title = "Puzzle 37 | (Maximum run in cricket)";
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    
+    
+    this.language = '';
+    
+    if (disqus_config_custom) {
+        disqus_config_custom.call(this);
+    }
+};
+
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+
+
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="text-26" class="widget widget_text">			<div class="textwidget"><!-- BuySellAds Zone Code -->
+<div id="bsap_1304848" class="bsarocks bsap_785bf45b162de1c5511e8baa02854e5c"></div>
+<!-- End BuySellAds Zone Code --></div>
+		</aside><aside id="text-25" class="widget widget_text">			<div class="textwidget"><center><input type="button" onclick="location.href=&#39;http://www.practice.geeksforgeeks.org/&#39;;" value="Start Coding Today " style="background-color: #4cb96b; color:white;"></center>
+
+&nbsp;</div>
+		</aside><aside id="text-9" class="widget widget_text">			<div class="textwidget"><script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- GQBigSideBar -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-9465609616171866" data-ad-slot="6592082030"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</aside><aside id="text-8" class="widget widget_text">			<div class="textwidget"><script async="" src="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- GQSideRect -->
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-9465609616171866" data-ad-slot="8068815239"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<p class="widget-title">Recent Posts</p>		<ul>
+					<li>
+				<a href="http://quiz.geeksforgeeks.org/qa-placement-quizzes-progressions-question-15/">QA – Placement Quizzes | Progressions | Question 15</a>
+						</li>
+					<li>
+				<a href="http://quiz.geeksforgeeks.org/qa-placement-quizzes-progressions-question-14/">QA – Placement Quizzes | Progressions | Question 14</a>
+						</li>
+					<li>
+				<a href="http://quiz.geeksforgeeks.org/qa-placement-quizzes-progressions-question-13/">QA – Placement Quizzes | Progressions | Question 13</a>
+						</li>
+					<li>
+				<a href="http://quiz.geeksforgeeks.org/qa-placement-quizzes-progressions-question-12/">QA – Placement Quizzes | Progressions | Question 12</a>
+						</li>
+					<li>
+				<a href="http://quiz.geeksforgeeks.org/qa-placement-quizzes-progressions-question-11/">QA – Placement Quizzes | Progressions | Question 11</a>
+						</li>
+				</ul>
+		</aside><aside id="text-27" class="widget widget_text">			<div class="textwidget"><a href="http://www.cayenne-mydevices.com/?utm_source=QuizGeeksForGeeks&amp;utm_medium=banner_ad&amp;utm_campaign=QuizGeeksForGeeks_Ard_Pi_300x250"><img src="http://d30wr2otswzun8.cloudfront.net/wp-content/uploads/2016/08/Cayenne-QuizGeeksForGeeks-300x250-300x250.png" alt="Cayenne-QuizGeeksForGeeks-300x250" width="300" height="250" class="alignleft size-medium wp-image-27501" style="display: none !important;"></a></div>
+		</aside><aside id="text-4" class="widget widget_text">			<div class="textwidget"><form style="border:1px #ccc;padding:2px;text-align:left;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#39;https://feedburner.google.com/fb/a/mailverify?uri=Geeksquiz&#39;, &#39;popupwindow&#39;, &#39;scrollbars=yes,width=550,height=520&#39;);return true"><p>Subscribe and Never Miss an Article</p><input type="text" style="width:140px" placeholder="Email Address" name="email"><input type="hidden" value="Geeksquiz" name="uri"><input type="hidden" name="loc" value="en_US">&nbsp;&nbsp;<input type="submit" style="background-color: #4cb96b;" value="Subscribe"></form></div>
+		</aside><aside id="text-21" class="widget widget_text">			<div class="textwidget"><center><a href="https://www.facebook.com/Geeksquiz/" target="_blank"><center><input type="button" value="Like us on Facebook" style="background-color: #4cb96b; color:white;"></center></a>
+
+&nbsp;</center></div>
+		</aside><aside id="text-17" class="widget widget_text"><p class="widget-title">Popular Posts/Pages</p>			<div class="textwidget"><p><b><a href="http://geeksquiz.com/gate-corner-2/">GATE CS Corner </a></b><br>
+<a href="http://geeksquiz.com/commonly-asked-c-programming-interview-questions-set-1/">Commonly Asked C Programming Interview Questions </a><br>
+<a href="http://geeksquiz.com/c-language-2/pointers/">Pointers in C</a><br>
+<a href="http://geeksquiz.com/puzzle-21-3-ants-and-triangle/">3 Ants and Triangle Puzzle</a><br>
+<a href="http://geeksquiz.com/gate-cs-2016-set-1/"><strong>GATE CS 2016 S5</strong></a><br>
+<a href="http://geeksquiz.com/gate-cs-2016-set-2/"><strong>GATE CS 2016 S6</strong></a><br>
+<a href="http://geeksquiz.com/gate-cs-2015-set-1/">GATE-CS-2015(Set1)</a><br>
+<a href="http://geeksquiz.com/gate-cs-2015-set-2/">GATE-CS-2015(Set2)</a><br>
+<a href="http://geeksquiz.com/gate-cs-2015-set-3/">GATE-CS-2015(Set3)</a></p>
+</div>
+		</aside><aside id="text-7" class="widget widget_text"><p class="widget-title">Recent Discussions</p>			<div class="textwidget"><script type="text/javascript" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/recent_comments_widget.js"></script> <style type="text/css" media="screen">	 .dsq-widget ul.dsq-widget-list {	 padding: 0;	 margin: 0;	 text-align: left;	 }	 img.dsq-widget-avatar {	 width: 32px;	 height: 32px;	 border: 0px;	 margin: 0px;	 padding: 0px 3px 3px 0px;	 float: left;	 }	 a.dsq-widget-user {	 font-weight: bold;	 }	 a.dsq-widget-thread {	 font-weight: bold;	 }	 p.dsq-widget-meta {	 clear: both;	 font-size: 80%;	 padding: 0;	 margin: 0;	 }	 li.dsq-widget-item {	 margin: 15px 0;	 list-style-type: none;	 clear: both;	 }	 span.dsq-widget-clout {	 padding: 0 2px;	 background-color: #ff7300;	 color: #fff;	 }	 table.dsq-widget-horiz td {	 padding-right: 15px;	 }	 .dsq-widget-comment p {	 display: inline;	 }	 </style>	 <ul class="dsq-widget-list">	 <li class="dsq-widget-item">	 shuvajit	 <span class="dsq-widget-comment"><p>why doesn't the 99th person kill the 1st...</p></span>	 <p class="dsq-widget-meta"><a href="http://quiz.geeksforgeeks.org/puzzle-100-people-in-a-circle-with-gun-puzzle/">Puzzle 81 | 100 people in a circle with gun puzzle</a>&nbsp;·&nbsp;<a href="http://quiz.geeksforgeeks.org/puzzle-100-people-in-a-circle-with-gun-puzzle/#comment-2895285189">2 hours ago</a></p>	 </li>	 <li class="dsq-widget-item">	 shuvajit	 <span class="dsq-widget-comment"><p>what is i???</p></span>	 <p class="dsq-widget-meta"><a href="http://quiz.geeksforgeeks.org/puzzle-100-people-in-a-circle-with-gun-puzzle/">Puzzle 81 | 100 people in a circle with gun puzzle</a>&nbsp;·&nbsp;<a href="http://quiz.geeksforgeeks.org/puzzle-100-people-in-a-circle-with-gun-puzzle/#comment-2895280801">2 hours ago</a></p>	 </li>	 <li class="dsq-widget-item">	 sam	 <span class="dsq-widget-comment"><p>can somebody tell me whats the problem in this...</p></span>	 <p class="dsq-widget-meta"><a href="http://quiz.geeksforgeeks.org/stack-set-2-infix-to-postfix/">Stack | Set 2 (Infix to Postfix)</a>&nbsp;·&nbsp;<a href="http://quiz.geeksforgeeks.org/stack-set-2-infix-to-postfix/#comment-2895261873">2 hours ago</a></p>	 </li>	 <li class="dsq-widget-item">	 sam	 <span class="dsq-widget-comment"><p>can somebody tell me whats the problem in this...</p></span>	 <p class="dsq-widget-meta"><a href="http://quiz.geeksforgeeks.org/stack-set-2-infix-to-postfix/">Stack | Set 2 (Infix to Postfix)</a>&nbsp;·&nbsp;<a href="http://quiz.geeksforgeeks.org/stack-set-2-infix-to-postfix/#comment-2895260901">2 hours ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-user" href="https://disqus.com/by/sachi059/">Sachidananda Sahu</a>	 <span class="dsq-widget-comment"><p>a&gt;b ? c=10 : d=10; As expression c or d is...</p></span>	 <p class="dsq-widget-meta"><a href="http://quiz.geeksforgeeks.org/c-language-2/operators/">Operators</a>&nbsp;·&nbsp;<a href="http://quiz.geeksforgeeks.org/c-language-2/operators/#comment-2895226885">3 hours ago</a></p>	 </li>	 <li class="dsq-widget-item">	 <a class="dsq-widget-user" href="https://disqus.com/by/shravyapabba/">Shravya Pabba</a>	 <span class="dsq-widget-comment"><p>I think max should be 120.Please explain</p></span>	 <p class="dsq-widget-meta"><a href="http://quiz.geeksforgeeks.org/gate-gate-cs-2004-question-14/">GATE | GATE-CS-2004 | Question 14</a>&nbsp;·&nbsp;<a href="http://quiz.geeksforgeeks.org/gate-gate-cs-2004-question-14/#comment-2895219814">3 hours ago</a></p>	 </li>	 </ul></div>
+		</aside><aside id="categories-3" class="widget widget_categories"><p class="widget-title">Categories</p><label class="screen-reader-text" for="cat">Categories</label><select name="cat" id="cat" class="postform">
+	<option value="-1">Select Category</option>
+	<option class="level-0" value="107">Articles</option>
+	<option class="level-1" value="216">&nbsp;&nbsp;&nbsp;Algorithms</option>
+	<option class="level-2" value="318">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Searching and Sorting</option>
+	<option class="level-1" value="158">&nbsp;&nbsp;&nbsp;C</option>
+	<option class="level-1" value="203">&nbsp;&nbsp;&nbsp;C++</option>
+	<option class="level-1" value="257">&nbsp;&nbsp;&nbsp;Compiler Design</option>
+	<option class="level-1" value="256">&nbsp;&nbsp;&nbsp;Computer Networks</option>
+	<option class="level-1" value="317">&nbsp;&nbsp;&nbsp;Computer Organization and Architecture</option>
+	<option class="level-1" value="18">&nbsp;&nbsp;&nbsp;Data Structures</option>
+	<option class="level-2" value="310">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hash</option>
+	<option class="level-2" value="305">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Linked List</option>
+	<option class="level-2" value="309">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Queue</option>
+	<option class="level-2" value="308">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stack</option>
+	<option class="level-2" value="304">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tree</option>
+	<option class="level-1" value="159">&nbsp;&nbsp;&nbsp;DBMS</option>
+	<option class="level-1" value="323">&nbsp;&nbsp;&nbsp;Difference</option>
+	<option class="level-1" value="264">&nbsp;&nbsp;&nbsp;Digital Electronic</option>
+	<option class="level-1" value="188">&nbsp;&nbsp;&nbsp;Digital Logic</option>
+	<option class="level-1" value="225">&nbsp;&nbsp;&nbsp;Interview Experiences</option>
+	<option class="level-1" value="214">&nbsp;&nbsp;&nbsp;Java</option>
+	<option class="level-1" value="254">&nbsp;&nbsp;&nbsp;Mathematics</option>
+	<option class="level-1" value="196">&nbsp;&nbsp;&nbsp;Operating Systems</option>
+	<option class="level-1" value="366">&nbsp;&nbsp;&nbsp;Placements</option>
+	<option class="level-2" value="388">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DI – Placements</option>
+	<option class="level-2" value="369">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;English – Placements</option>
+	<option class="level-2" value="367">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;QA – Placements</option>
+	<option class="level-2" value="368">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reasoning – Placements</option>
+	<option class="level-1" value="247">&nbsp;&nbsp;&nbsp;Puzzle</option>
+	<option class="level-1" value="319">&nbsp;&nbsp;&nbsp;Python</option>
+	<option class="level-1" value="350">&nbsp;&nbsp;&nbsp;Python Articles</option>
+	<option class="level-1" value="185">&nbsp;&nbsp;&nbsp;Theory of Computation</option>
+	<option class="level-0" value="269">Library</option>
+	<option class="level-1" value="270">&nbsp;&nbsp;&nbsp;C</option>
+	<option class="level-0" value="195">Programs</option>
+	<option class="level-0" value="112">Quizzes</option>
+	<option class="level-1" value="178">&nbsp;&nbsp;&nbsp;Aptitude</option>
+	<option class="level-1" value="113">&nbsp;&nbsp;&nbsp;Computer Science Quizzes</option>
+	<option class="level-2" value="14">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Algorithms</option>
+	<option class="level-2" value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C</option>
+	<option class="level-2" value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C++</option>
+	<option class="level-2" value="12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Computer Networks</option>
+	<option class="level-2" value="200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Computer Organization and Architecture</option>
+	<option class="level-2" value="13">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data Structures</option>
+	<option class="level-2" value="11">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DBMS</option>
+	<option class="level-2" value="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GATE</option>
+	<option class="level-2" value="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Java</option>
+	<option class="level-2" value="10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Operating Systems</option>
+	<option class="level-1" value="332">&nbsp;&nbsp;&nbsp;Python-Quizzes</option>
+	<option class="level-1" value="374">&nbsp;&nbsp;&nbsp;QA – Placement Quizzes</option>
+	<option class="level-1" value="187">&nbsp;&nbsp;&nbsp;Web technologies</option>
+	<option class="level-0" value="1">Uncategorized</option>
+	<option class="level-0" value="190">Web Technology</option>
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			location.href = "http://quiz.geeksforgeeks.org/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+		<div class="clear"></div>
+		</div><!-- .site-info -->
+		</footer><!-- #colophon -->
+<center>
+<div class="iconic-footer">
+
+@geeksforgeeks &nbsp;&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/2.5/in/deed.en_US" title="Valid XHTML Strict 1.0">Some rights reserved</a>  <a href="http://www.geeksforgeeks.org/about/contact-us/"> &nbsp; &nbsp; &nbsp; &nbsp;Contact Us!</a>  <a href="http://www.geeksforgeeks.org/about/"> &nbsp; &nbsp; &nbsp; &nbsp;About Us!&nbsp; &nbsp; &nbsp; &nbsp;</a>
+
+			</div></center><!-- .site-info -->
+				<div class="clear"></div>
+</div><!-- #page -->
+
+        <script type="text/javascript">
+        // <![CDATA[
+        var disqus_shortname = 'geeksquiz';
+        (function () {
+            var nodes = document.getElementsByTagName('span');
+            for (var i = 0, url; i < nodes.length; i++) {
+                if (nodes[i].className.indexOf('dsq-postid') != -1) {
+                    nodes[i].parentNode.setAttribute('data-disqus-identifier', nodes[i].getAttribute('data-dsqidentifier'));
+                    url = nodes[i].parentNode.href.split('#', 1);
+                    if (url.length == 1) { url = url[0]; }
+                    else { url = url[1]; }
+                    nodes[i].parentNode.href = url + '#disqus_thread';
+                }
+            }
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+        // ]]>
+        </script>
+        <script type="text/javascript" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/selectnav.js"></script>
+
+
+<script type="text/javascript">
+// Code for google analytics
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37433965-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+
+</script>  
+<script async="" type="text/javascript" src="http://cdn.fancybar.net/ac/fancybar.js?zoneid=1502&amp;serve=C6ADVKE&amp;placement=geeksforgeeks" id="_fancybar_js"></script>
+
+<!-- Dynamic page generated in 0.195 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2016-09-15 08:12:33 -->
+
+<!-- super cache --><iframe style="display: none;" src="./Puzzle 37 _ (Maximum run in cricket) - GeeksQuiz_files/saved_resource(2).html"></iframe></body></html>
